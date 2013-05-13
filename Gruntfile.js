@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
   "use strict";
 
-  // Configure tasks
+  // Config...
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     jade: {
@@ -37,10 +37,10 @@ module.exports = function(grunt) {
   });
 
 
-  // Load tasks / plugins
+  // Load tasks...
   grunt.loadNpmTasks('grunt-jade');
   grunt.loadNpmTasks('grunt-contrib-sass');
 
-  // Define task aliases and tasks
+  // Task aliases and tasks
   grunt.registerTask('default', 'Compile jade/sass into html/css', ['jade:dev', 'sass:dev']);
 };
