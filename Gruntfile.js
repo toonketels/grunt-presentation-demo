@@ -47,6 +47,20 @@ module.exports = function(grunt) {
         'url': "http://nodejs.org/api/all.html",
         'name': 'node-docs.html'
       }
+    },
+    concat: {
+      'one': {
+        'src': ['downloads/*.json'],
+        'dest': 'cat/one.cat',
+      },
+      'two': {
+        'src': ['downloads/*'],
+        'dest': 'cat/two.cat',
+        'filter': function(filepath) {
+          var stats = require('fs').statSync(filepath);
+          return stats.size < 600000;
+        }
+      }
     }
   });
 
