@@ -33,6 +33,10 @@ module.exports = function(grunt) {
           'www/css/main.css': 'sass/main.sass'
         }
       }
+    },
+    introspect: {
+      configOne: 'config one',
+      configTwo: [1, 2]
     }
   });
 
@@ -43,4 +47,39 @@ module.exports = function(grunt) {
 
   // Task aliases and tasks
   grunt.registerTask('default', 'Compile jade/sass into html/css', ['jade:dev', 'sass:dev']);
+
+    grunt.registerTask('introspect', 'Dummy task to view the kind of data we have access to', function(argOne, argTwo) {
+    var config,
+        pkg,
+        env;
+
+    // Arguments
+    console.log('Arguments object:');
+    console.log(arguments);
+
+    console.log('Named arguments variables:');
+    console.log(argOne);
+    console.log(argTwo);
+
+    // This
+    console.log('this:');
+    console.log(this);
+
+    // Configuration
+    console.log('Configuration:');
+    config = grunt.config.get(this.name);
+    console.log(config);
+
+    // Package info
+    console.log('Package:');
+    pkg = grunt.config.get('pkg');
+    console.log(pkg);
+
+    // Option parameters
+    console.log('Option parameters: ');
+    env = grunt.option('env') || 'staging';
+    console.log(env);
+    
+    console.log(grunt.option.flags());
+  });
 };
