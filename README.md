@@ -5,7 +5,7 @@ Grunt.js demo for Node.js User Group Belgium.
 
 Presented by [Anthony Ringoet](https://twitter.com/mylittletony) and [Toon Ketels](https://twitter.com/toonketels).
 
-Slides can be found at [Speakerdeck](https://speakerdeck.com).
+Slides can be found at [Speakerdeck](https://speakerdeck.com/toonketels/introducing-grunt-dot-js-the-javascript-task-runner).
 
 
 ## How to use
